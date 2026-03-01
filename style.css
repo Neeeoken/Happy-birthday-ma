@@ -17,7 +17,14 @@ body {
 
 @keyframes glow {
     from { text-shadow: 0 0 10px white; }
-    to { text-shadow: 0 0 30px yellow; }
+    to { text-shadow: 0 0 30px #cc99ff; }
+}
+
+.slideshow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
 }
 
 .slideshow img {
@@ -41,27 +48,28 @@ button {
     color: white;
 }
 
+
 .hidden {
     display: none;
 }
+
 
 #letter {
     margin-top: 30px;
     background: rgba(255,255,255,0.2);
     padding: 20px;
     border-radius: 20px;
-}
-/* Fade-in effect */
-#letter {
     opacity: 0;
     transition: opacity 1.5s ease;
 }
 
+
 #letter.show {
+    display: block;
     opacity: 1;
 }
 
-/* Floating hearts background */
+
 .floating-hearts {
     position: fixed;
     width: 100%;
@@ -90,7 +98,7 @@ button {
     }
 }
 
-/* Gift Container */
+
 .gift-container {
     margin-top: 30px;
     cursor: pointer;
@@ -101,7 +109,7 @@ button {
     font-size: 18px;
 }
 
-/* Gift Box */
+
 .gift-box {
     position: relative;
     width: 150px;
@@ -130,11 +138,11 @@ button {
     transform-origin: bottom left;
 }
 
-/* Ribbon */
+
 .box::before, .lid::before {
     content: "";
     position: absolute;
-    background: white;
+    background: #9b59b6;
 }
 
 .box::before {
@@ -149,11 +157,93 @@ button {
     left: 75px;
 }
 
-/* Open animation */
+
 .gift-box.open .lid {
     transform: rotate(-40deg) translateY(-20px);
 }
-/* Glow light */
+
+
+.bow {
+    position: absolute;
+    top: -28px;
+    left: 50%;
+    transform: translateX(-42%);
+    width: 80px;
+    height: 50px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+
+.bow-left {
+    position: absolute;
+    width: 30px;
+    height: 22px;
+    background: #9b59b6;
+    border-radius: 50% 0 0 50%;
+    top: 4px;
+    left: 4px;
+    transform: rotate(-25deg);
+    transform-origin: right center;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+.bow-right {
+    position: absolute;
+    width: 30px;
+    height: 22px;
+    background: #9b59b6;
+    border-radius: 0 50% 50% 0;
+    top: 4px;
+    right: 4px;
+    transform: rotate(25deg);
+    transform-origin: left center;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+
+.bow-center {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #7d3c98;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    z-index: 2;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.bow-tail-left {
+    position: absolute;
+    width: 14px;
+    height: 22px;
+    background: #9b59b6;
+    border-radius: 0 0 6px 6px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-18deg);
+    transform-origin: top center;
+    z-index: 1;
+}
+
+
+.bow-tail-right {
+    position: absolute;
+    width: 14px;
+    height: 22px;
+    background: #7d3c98;
+    border-radius: 0 0 6px 6px;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%) rotate(18deg);
+    transform-origin: top center;
+    z-index: 1;
+}
+
+
 .glow {
     position: absolute;
     width: 150px;
@@ -165,7 +255,7 @@ button {
     border-radius: 10px;
 }
 
-/* Shake animation */
+
 @keyframes shake {
     0% { transform: translateX(0); }
     20% { transform: translateX(-5px); }
@@ -179,11 +269,12 @@ button {
     animation: shake 0.5s ease;
 }
 
-/* Glow visible when open */
+
 .gift-box.open .glow {
     opacity: 1;
 }
-/* Photo burst container */
+
+
 .photo-burst {
     position: absolute;
     width: 150px;
@@ -193,7 +284,7 @@ button {
     pointer-events: none;
 }
 
-/* Individual floating photos */
+
 .photo-burst img {
     position: absolute;
     width: 60px;
@@ -203,7 +294,7 @@ button {
     animation: popOut 2s ease forwards;
 }
 
-/* Pop animation */
+
 @keyframes popOut {
     0% {
         transform: translateY(0) scale(0.5);
